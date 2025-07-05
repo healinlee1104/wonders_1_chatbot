@@ -6,6 +6,9 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 import Link from 'next/link';
 import { BookOpen, Calendar, MessageCircle, Users } from 'lucide-react';
 
+// 동적 렌더링 강제
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">

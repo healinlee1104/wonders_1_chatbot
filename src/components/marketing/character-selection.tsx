@@ -26,26 +26,26 @@ export default function CharacterSelection() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 py-8 md:py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
             AI 선배와 대화하기
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-2xl mx-auto">
             당신의 대학생활을 도와줄 AI 선배를 선택해보세요. 각각 다른 성격과 전문 분야를 가지고 있어요!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
           {characters.map((character) => (
             <Card
               key={character.id}
-              className="cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-md hover:scale-105 transform"
+              className="cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-md hover:scale-105 transform p-4 md:p-0"
               onClick={() => handleCharacterClick(character.id)}
             >
-              <CardHeader className="text-center">
-                <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${character.color} flex items-center justify-center mx-auto mb-4 overflow-hidden`}>
+              <CardHeader className="text-center pb-4">
+                <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br ${character.color} flex items-center justify-center mx-auto mb-4 overflow-hidden`}>
                   {character.avatar.startsWith('/images/') ? (
                     <Image
                       src={character.avatar}
@@ -61,42 +61,40 @@ export default function CharacterSelection() {
                       }}
                     />
                   ) : (
-                    <span className="text-3xl">{character.avatar}</span>
+                    <span className="text-2xl md:text-3xl">{character.avatar}</span>
                   )}
-                  <span className={`text-3xl ${character.avatar.startsWith('/images/') ? 'hidden' : ''}`}>
+                  <span className={`text-2xl md:text-3xl ${character.avatar.startsWith('/images/') ? 'hidden' : ''}`}>
                     {character.emoji}
                   </span>
                 </div>
-                <CardTitle className="text-xl">{character.name}</CardTitle>
-                <CardDescription>{character.description}</CardDescription>
+                <CardTitle className="text-lg md:text-xl">{character.name}</CardTitle>
+                <CardDescription className="text-sm md:text-base">{character.description}</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div>
-                    <h4 className="font-semibold text-sm text-gray-700 mb-2">전문 분야:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {character.specialties.map((specialty, index) => (
-                        <span
-                          key={index}
-                          className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs"
-                        >
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
+              <CardContent className="space-y-3 pt-0">
+                <div>
+                  <h4 className="font-semibold text-sm text-gray-700 mb-2">전문 분야:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {character.specialties.map((specialty, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs"
+                      >
+                        {specialty}
+                      </span>
+                    ))}
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-sm text-gray-700 mb-1">성격:</h4>
-                    <p className="text-sm text-gray-600">{character.personality}</p>
-                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm text-gray-700 mb-1">성격:</h4>
+                  <p className="text-sm text-gray-600">{character.personality}</p>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <p className="text-gray-600">
+        <div className="text-center mt-6 md:mt-8">
+          <p className="text-sm md:text-base text-gray-600">
             캐릭터를 클릭하면 바로 대화를 시작할 수 있어요!
           </p>
         </div>

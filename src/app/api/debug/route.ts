@@ -16,6 +16,9 @@ export async function GET() {
 
     return NextResponse.json(envVars);
   } catch (error) {
-    return NextResponse.json({ error: 'Debug API error' }, { status: 500 });
+    return NextResponse.json({ 
+      error: 'Debug API error', 
+      message: error instanceof Error ? error.message : 'Unknown error' 
+    }, { status: 500 });
   }
 } 

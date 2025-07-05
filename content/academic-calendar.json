@@ -1,0 +1,215 @@
+{
+  "2024": {
+    "semester1": {
+      "name": "1학기",
+      "startDate": "2024-03-04",
+      "endDate": "2024-06-14",
+      "events": [
+        {
+          "id": "registration_2024_1",
+          "title": "수강신청",
+          "startDate": "2024-02-19",
+          "endDate": "2024-02-23",
+          "type": "registration",
+          "description": "1학기 수강신청 기간입니다. 놓치지 마세요!",
+          "priority": "high"
+        },
+        {
+          "id": "orientation_2024_1",
+          "title": "신입생 오리엔테이션",
+          "startDate": "2024-02-26",
+          "endDate": "2024-03-01",
+          "type": "orientation",
+          "description": "신입생을 위한 오리엔테이션 주간",
+          "priority": "medium"
+        },
+        {
+          "id": "semester_start_2024_1",
+          "title": "1학기 개강",
+          "startDate": "2024-03-04",
+          "endDate": "2024-03-04",
+          "type": "semester",
+          "description": "1학기가 시작됩니다!",
+          "priority": "high"
+        },
+        {
+          "id": "midterm_2024_1",
+          "title": "중간고사",
+          "startDate": "2024-04-15",
+          "endDate": "2024-04-19",
+          "type": "exam",
+          "description": "1학기 중간고사 기간",
+          "priority": "high"
+        },
+        {
+          "id": "festival_2024_1",
+          "title": "대학축제",
+          "startDate": "2024-05-13",
+          "endDate": "2024-05-15",
+          "type": "festival",
+          "description": "연례 대학 축제 기간",
+          "priority": "medium"
+        },
+        {
+          "id": "final_2024_1",
+          "title": "기말고사",
+          "startDate": "2024-06-10",
+          "endDate": "2024-06-14",
+          "type": "exam",
+          "description": "1학기 기말고사 기간",
+          "priority": "high"
+        }
+      ]
+    },
+    "summer": {
+      "name": "하계방학",
+      "startDate": "2024-06-15",
+      "endDate": "2024-08-31",
+      "events": [
+        {
+          "id": "summer_session_2024",
+          "title": "하계계절학기",
+          "startDate": "2024-06-24",
+          "endDate": "2024-07-12",
+          "type": "session",
+          "description": "하계 계절학기 운영",
+          "priority": "medium"
+        },
+        {
+          "id": "summer_internship_2024",
+          "title": "하계 인턴십",
+          "startDate": "2024-07-01",
+          "endDate": "2024-08-30",
+          "type": "internship",
+          "description": "하계 인턴십 프로그램",
+          "priority": "low"
+        }
+      ]
+    },
+    "semester2": {
+      "name": "2학기",
+      "startDate": "2024-09-02",
+      "endDate": "2024-12-20",
+      "events": [
+        {
+          "id": "registration_2024_2",
+          "title": "수강신청",
+          "startDate": "2024-08-19",
+          "endDate": "2024-08-23",
+          "type": "registration",
+          "description": "2학기 수강신청 기간입니다.",
+          "priority": "high"
+        },
+        {
+          "id": "semester_start_2024_2",
+          "title": "2학기 개강",
+          "startDate": "2024-09-02",
+          "endDate": "2024-09-02",
+          "type": "semester",
+          "description": "2학기가 시작됩니다!",
+          "priority": "high"
+        },
+        {
+          "id": "midterm_2024_2",
+          "title": "중간고사",
+          "startDate": "2024-10-14",
+          "endDate": "2024-10-18",
+          "type": "exam",
+          "description": "2학기 중간고사 기간",
+          "priority": "high"
+        },
+        {
+          "id": "final_2024_2",
+          "title": "기말고사",
+          "startDate": "2024-12-16",
+          "endDate": "2024-12-20",
+          "type": "exam",
+          "description": "2학기 기말고사 기간",
+          "priority": "high"
+        }
+      ]
+    },
+    "winter": {
+      "name": "동계방학",
+      "startDate": "2024-12-21",
+      "endDate": "2025-02-28",
+      "events": [
+        {
+          "id": "winter_session_2024",
+          "title": "동계계절학기",
+          "startDate": "2025-01-06",
+          "endDate": "2025-01-24",
+          "type": "session",
+          "description": "동계 계절학기 운영",
+          "priority": "medium"
+        },
+        {
+          "id": "graduation_2024",
+          "title": "졸업식",
+          "startDate": "2025-02-14",
+          "endDate": "2025-02-14",
+          "type": "graduation",
+          "description": "2024년도 졸업식",
+          "priority": "high"
+        }
+      ]
+    }
+  },
+  "holidays": [
+    {
+      "name": "신정",
+      "date": "2024-01-01",
+      "type": "national"
+    },
+    {
+      "name": "설날",
+      "date": "2024-02-10",
+      "type": "national"
+    },
+    {
+      "name": "삼일절",
+      "date": "2024-03-01",
+      "type": "national"
+    },
+    {
+      "name": "어린이날",
+      "date": "2024-05-05",
+      "type": "national"
+    },
+    {
+      "name": "부처님오신날",
+      "date": "2024-05-15",
+      "type": "national"
+    },
+    {
+      "name": "현충일",
+      "date": "2024-06-06",
+      "type": "national"
+    },
+    {
+      "name": "광복절",
+      "date": "2024-08-15",
+      "type": "national"
+    },
+    {
+      "name": "추석",
+      "date": "2024-09-17",
+      "type": "national"
+    },
+    {
+      "name": "개천절",
+      "date": "2024-10-03",
+      "type": "national"
+    },
+    {
+      "name": "한글날",
+      "date": "2024-10-09",
+      "type": "national"
+    },
+    {
+      "name": "성탄절",
+      "date": "2024-12-25",
+      "type": "national"
+    }
+  ]
+} 

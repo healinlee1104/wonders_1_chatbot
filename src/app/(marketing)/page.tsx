@@ -4,7 +4,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 import Link from 'next/link';
 import { BookOpen, Calendar, MessageCircle, Users } from 'lucide-react';
 
-export default function Home() {
+export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       {/* Hero Section */}
@@ -140,4 +140,4 @@ export default function Home() {
       </section>
     </div>
   );
-}
+} 

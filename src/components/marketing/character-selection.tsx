@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import charactersData from '../../../content/characters.json';
 
 export interface Character {
@@ -58,9 +59,11 @@ export default function CharacterSelection() {
               <CardHeader className="text-center">
                 <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${character.color} flex items-center justify-center mx-auto mb-4 overflow-hidden`}>
                   {character.avatar.startsWith('/images/') ? (
-                    <img 
-                      src={character.avatar} 
+                    <Image
+                      src={character.avatar}
                       alt={character.name}
+                      width={80}
+                      height={80}
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         // 이미지 로딩 실패 시 이모지로 대체

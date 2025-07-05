@@ -3,9 +3,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-// Removed unused imports
 import { Send, ArrowLeft, BookOpen, Calendar, User } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 import charactersData from '../../../content/characters.json';
 import type { Character } from '@/components/marketing/character-selection';
 
@@ -163,9 +163,11 @@ export default function ChatInterface() {
             <div className="flex items-center space-x-3">
               <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${selectedCharacter.color} flex items-center justify-center overflow-hidden`}>
                 {selectedCharacter.avatar.startsWith('/images/') ? (
-                  <img 
-                    src={selectedCharacter.avatar} 
+                  <Image
+                    src={selectedCharacter.avatar}
                     alt={selectedCharacter.name}
+                    width={40}
+                    height={40}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       // 이미지 로딩 실패 시 이모지로 대체
@@ -204,9 +206,11 @@ export default function ChatInterface() {
                   <div className="mr-2 flex-shrink-0">
                     <div className="w-8 h-8 rounded-full overflow-hidden bg-gray-200">
                       {selectedCharacter.avatar.startsWith('/images/') ? (
-                        <img 
-                          src={selectedCharacter.avatar} 
+                        <Image
+                          src={selectedCharacter.avatar}
                           alt={selectedCharacter.name}
+                          width={32}
+                          height={32}
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;

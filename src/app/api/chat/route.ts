@@ -24,13 +24,22 @@ async function searchAcademicEvents(query: string) {
   
   if (!yearData) return [];
 
-  let events: any[] = [];
+  type AcademicEvent = {
+    id: string;
+    title: string;
+    startDate: string;
+    endDate: string;
+    type: string;
+    description: string;
+  };
+
+  let events: AcademicEvent[] = [];
   const semesters = ['semester1', 'summer', 'semester2', 'winter'];
   
   semesters.forEach(semester => {
     const semesterData = yearData[semester as keyof typeof yearData];
     if (semesterData && typeof semesterData === 'object' && 'events' in semesterData) {
-      events = events.concat((semesterData as any).events);
+      events = events.concat((semesterData as { events: AcademicEvent[] }).events);
     }
   });
 
@@ -64,6 +73,15 @@ async function searchBooks(query: string) {
 
 // 추천 도서 가져오기 함수
 async function getRecommendations(category?: string) {
+  type Book = {
+    id: string;
+    title: string;
+    author: string;
+    description: string;
+    location: string;
+    available: boolean;
+  };
+
   if (category) {
     const recommendation = libraryData.recommendations.find(rec => 
       rec.category.toLowerCase().includes(category.toLowerCase())
@@ -72,9 +90,9 @@ async function getRecommendations(category?: string) {
       return {
         category: recommendation.category,
         description: recommendation.description,
-                 books: recommendation.books.map(bookId => 
-           libraryData.books.find(book => book.id === bookId)
-         ).filter(Boolean).slice(0, 3) as any[]
+        books: recommendation.books.map(bookId => 
+          libraryData.books.find(book => book.id === bookId)
+        ).filter(Boolean).slice(0, 3) as Book[]
       };
     }
   }
@@ -87,9 +105,9 @@ async function getRecommendations(category?: string) {
     return {
       category: defaultRec.category,
       description: defaultRec.description,
-           books: defaultRec.books.map(bookId => 
-       libraryData.books.find(book => book.id === bookId)
-     ).filter(Boolean).slice(0, 3) as any[]
+      books: defaultRec.books.map(bookId => 
+        libraryData.books.find(book => book.id === bookId)
+      ).filter(Boolean).slice(0, 3) as Book[]
     };
   }
   
@@ -169,9 +187,17 @@ export async function POST(request: NextRequest) {
         if (recommendations) {
           additionalInfo += `\n\n⭐ ${recommendations.category} 추천:\n`;
           additionalInfo += `${recommendations.description}\n`;
-                     recommendations.books.forEach((book: any) => {
-             additionalInfo += `• ${book.title} (${book.author})\n`;
-           });
+          type Book = {
+            id: string;
+            title: string;
+            author: string;
+            description: string;
+            location: string;
+            available: boolean;
+          };
+          recommendations.books.forEach((book: Book) => {
+            additionalInfo += `• ${book.title} (${book.author})\n`;
+          });
         }
       }
     }

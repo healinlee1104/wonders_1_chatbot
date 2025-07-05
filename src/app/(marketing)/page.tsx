@@ -101,13 +101,12 @@ export default function LandingPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             나만의 AI 선배를 선택해보세요
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              { name: '써니', avatar: '🌞', color: 'from-yellow-400 to-orange-500' },
-              { name: '세이지', avatar: '🧠', color: 'from-blue-400 to-purple-500' },
+              { name: '버디', avatar: '😄', color: 'from-indigo-400 to-blue-500' },
               { name: '스파크', avatar: '⚡', color: 'from-pink-400 to-red-500' },
-              { name: '칼름', avatar: '💚', color: 'from-green-400 to-teal-500' },
-              { name: '버디', avatar: '😄', color: 'from-indigo-400 to-blue-500' }
+              { name: '세이지', avatar: '🧠', color: 'from-blue-400 to-purple-500' },
+              { name: '칼름', avatar: '💚', color: 'from-green-400 to-teal-500' }
             ].map((character, index) => (
               <div key={index} className="flex flex-col items-center">
                 <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${character.color} flex items-center justify-center mb-3`}>
